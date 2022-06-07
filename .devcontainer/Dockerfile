@@ -26,6 +26,7 @@ RUN apt-get update && bash /tmp/library-scripts/common-debian.sh ${INSTALL_ZSH} 
 
 # install R packages needed for VSCode interaction and package management
 RUN install2.r --error --skipinstalled --ncpus -4 languageserver renv remotes httpgd
+RUN installGithub.r coolbutuseless/tickle
 
 # install radian via python and pip3
 RUN apt-get update \
