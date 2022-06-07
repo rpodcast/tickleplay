@@ -25,7 +25,7 @@ COPY library-scripts/common-debian.sh /tmp/library-scripts/
 RUN apt-get update && bash /tmp/library-scripts/common-debian.sh ${INSTALL_ZSH} ${USERNAME} ${USER_UID} ${USER_GID} ${UPGRADE_PACKAGES} ${INSTALL_OHMYZSH} ${INSTALL_NONFREE}
 
 # install R packages needed for VSCode interaction and package management
-RUN install2.r --error --skipinstalled --ncpus -4 languageserver renv remotes httpgd
+RUN install2.r --error --skipinstalled --ncpus -4 languageserver renv remotes httpgd rmarkdown ggplot2 magick
 RUN installGithub.r coolbutuseless/tickle
 
 # install radian via python and pip3
